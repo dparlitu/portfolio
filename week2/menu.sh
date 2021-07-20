@@ -8,13 +8,13 @@ if [ $? = 0 ]; then
     select opt in "${options[@]}"
     do
         case $opt in
-            "Option 1")
+            "Create a folder")
                 ./folderCreator.sh
                 ;;
-            "Option 2")
+            "Copy a folder")
                 ./folderCopier.sh
                 ;;
-            "Option 3")
+            "Set a password")
                 ./setPassword.sh
                 ;;
             "Quit")
