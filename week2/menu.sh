@@ -9,13 +9,13 @@ if [ $? = 0 ]; then
     do
         case $opt in
             "Option 1")
-                ./foldercreator.sh
+                ./folderCreator.sh
                 ;;
             "Option 2")
-                ./foldercopier.sh
+                ./folderCopier.sh
                 ;;
             "Option 3")
-                ./setpassword.sh
+                ./setPassword.sh
                 ;;
             "Quit")
                 break

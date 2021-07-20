@@ -5,7 +5,7 @@
 # otherwise create the hash for the script to use
 if [ -f secret ]; then
 
-    # ask user for existing password that will be checked against existing hash
+    # ask user for his existing password; that will be checked against existing hash
     read -sp "Please enter the Password: " pwd
 
     # save password to file
