@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# open passwordCheck script to check for password
 ./passwordCheck.sh
 
+# if exit status from the password check script returns 0 then display a menu with four options
 if [ $? = 0 ]; then
     PS3='Please enter your choice: '
     options=("Create a folder" "Copy a folder" "Set a password" "Quit")
