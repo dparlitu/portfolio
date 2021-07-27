@@ -3,5 +3,5 @@
 fruits="Apple Mango Strawberry Orange Banana"
 for fruit in $fruits
     do
-        echo $fruit
+        echo "FRUIT: "$fruit
 done
