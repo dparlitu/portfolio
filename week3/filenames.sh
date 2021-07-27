@@ -14,11 +14,11 @@ while read line; do
     else
         #check if is -d directory then echo
         if [ -d "$line" ]; then
-            echo "$line is a Directory"
+            echo "$line - That's a Directory"
         
         #check if is -f file then echo
         elif [ -f "$line" ]; then
-            echo "$line is a File"
+            echo "$line - That file exists"
         else
             echo "$line - I don't know what that is!"
         fi
