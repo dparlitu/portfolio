@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # create ps3 menu options
-PS3='Please enter your choice: '
-    options=("Addition" "Subtraction" "Multiplication" "Division")
+PS3='Please choose Calculation: '
+    options=("Addition" "Subtraction" "Multiplication" "Division" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -11,7 +11,7 @@ PS3='Please enter your choice: '
                 echo
                 # text colour start here
                 echo -e "\033[34mEntering Addition mode ..."
-                echo "Please enter two numbers, press Return after each one: "
+                echo "Please enter TWO Numbers, press Return after each one: "
                     read a
                     read b
                         res=`echo $a + $b | bc`
@@ -22,7 +22,7 @@ PS3='Please enter your choice: '
             "Subtraction")
                 echo
                 echo -e "\033[32mEntering Subtraction mode ..."
-                echo "Please enter two numbers, press Return after each one: "
+                echo "Please enter TWO Numbers, press Return after each one: "
                     read a
                     read b
                         res=`echo $a - $b | bc`
@@ -32,7 +32,7 @@ PS3='Please enter your choice: '
             "Multiplication")
                 echo
                 echo -e "\033[31mEntering Multiplication mode ..."
-                echo "Please enter two numbers, press Return after each one: "
+                echo "Please enter TWO Numbers, press Return after each one: "
                     read a
                     read b
                         res=`echo $a \* $b | bc`
@@ -42,7 +42,7 @@ PS3='Please enter your choice: '
             "Division")
                 echo
                 echo -e "\033[35mEntering Division mode ..."
-                echo "Please enter two numbers, press Return after each one: "
+                echo "Please enter TWO Numbers, press Return after each one: "
                     read a
                     read b
                         # set scale 2 decimal points otherwise will show 0 on < 1
