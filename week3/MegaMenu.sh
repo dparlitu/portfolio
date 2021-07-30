@@ -26,7 +26,7 @@ if [ $? = 0 ]; then
                 ./calculator.sh
                 ;;
             "Create Week Folders")
-                ./megafoldermaker.sh
+                ./megafoldermakerarg.sh
                 ;;
             "Check Filenames")
                 ./filenames.sh
