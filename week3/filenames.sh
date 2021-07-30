@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# check if length of argument 1 string is zero
-if [ -z "$1" ]; then
+echo -e "\e[33mPlease type in the filename containing the search list:\e[0m "
+
+read file
+
+# check if file exists
+if [ ! -f "$file" ]; then
 
 #Print an error and exit
-    echo "Error, provide the name of the file containing the search list" && exit 1 
+    echo "Error, file not found!" && exit 1 
 fi
 
 #if line is empty, just move on
@@ -23,7 +27,7 @@ while read line; do
             echo "$line - I don't know what that is!"
         fi
     fi
-done <$1
+done <$file
 
 exit 0
 
