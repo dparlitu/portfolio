@@ -7,10 +7,18 @@ until [ "$url" = "exit" ]
 
             #if the prompt input string is not 'exit' then run the code
             if [ $url != "exit" ]; then
-                read -p "Type the location of where you would like to download the file to: " location
-                wget $location $url
+                read -p "Type the location of where you would like to download the file. Current working location `pwd`: " location
+                
+                # check that download location available
+                if [ -d $location ]; then
+                    wget -P $location $url
+                else
+                    echo "Download location unavailable"
+                fi
             fi 
 done
+
+exit 0
 
 # REFERENCES
 # https://linuxhint.com/bash_until_loops/
