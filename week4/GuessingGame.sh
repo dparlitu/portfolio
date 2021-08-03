@@ -1,34 +1,58 @@
+#!/bin/bash
 
- #!/bin/bash 
-
- 
-
-#This function prints a given error 
-
+#This function prints an error 
 printError() 
-
 {
     echo -e "\033[31mERROR:\033[0m $1"
 } 
 
-#This function will get a value between the 2nd and 3rd arguments 
+#This function prints a warning
+printWarning() 
+{
+    echo -e "\033[34mWARNING:\033[0m $1"
+} 
 
+#This function will check a value between 1 and 100 
 getNumber() 
-
 { 
     read -p "$1: "
-    while (( $REPLY < $2 || $REPLY> $3 )); do
-        printError "Input must be between $2 and $3"
+    while (( $REPLY < "1" || $REPLY > "100" )); 
+        do
+        printError "Input must be between 1 and 100"
         read -p "$1: "
+        checkHigh
+        checkLow
     done
 }
 
-echo "this is the start of the script" 
+#This function will check value lower than 42 
+checkLow() 
+{ 
+    while (( $REPLY < "42" )); 
+        do
+        printWarning "Number too LOW. Try again..."
+        getNumber
+        checkHigh
+    done
+}
 
-getNumber "please type a number between 1 and 10" 1 10 
+#This function will check value higher than 42 
+checkHigh() 
+{ 
+    while (( $REPLY > "42" )); 
+        do
+        printWarning "Number too HIGH. Try again..."
+        getNumber
+        checkLow
+    done
+}
 
-echo "Thank you!" 
+echo "Please enter a number between 1 and 100" 
 
-getNumber "please type a number between 50 and 100" 50 100 
+getNumber
+checkLow
+checkHigh
 
-echo "Thank you!" 
+echo -e "\033[32mCORRECT! The number is $REPLY \033[0m"
+
+exit 0
