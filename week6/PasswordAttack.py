@@ -19,9 +19,10 @@ passwordHash = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
 # predefined lenght of the password
 length = 5
 
-upper = string.ascii_uppercase
-symbols = string.punctuation
-lower = string.ascii_lowercase
+# un-comment as required
+# upper = string.ascii_uppercase
+# symbols = string.punctuation
+# lower = string.ascii_lowercase
 num = string.digits
 
 # what type of characters should be used
