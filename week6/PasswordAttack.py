@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-# This script will try and guess a password using all possible combinations of lower case letters and numbers
-# this could be modified to include Upper case letters and symbols if needed
+# This script will try and guess a password using all possible combinations of numbers
+# this could be modified to include Upper case, lower case letters and symbols by changing the "all" formulae
 # the lenght can be modified by changing the "lenght" argument
 
 import hashlib
@@ -32,6 +32,7 @@ all = num
 # start counter
 tic = time.perf_counter()
 
+# start in infinite loop trying random generated passwords
 for i in itertools.count():
     print (f"{i}")
     
@@ -43,11 +44,10 @@ for i in itertools.count():
     print(f"Trying password {word}:{wordlistHash}")
 
     #if the hash is the same as the correct password's hash then we have cracked the password! 
-      
     if(wordlistHash == passwordHash): 
         toc = time.perf_counter()
         print(f"Password has been cracked in {toc - tic:0.4f} seconds after {i} tries! It was {word}") 
-      
+        # break the loop
         break
 
 
