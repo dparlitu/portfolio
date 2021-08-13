@@ -7,9 +7,11 @@ file=./downloads/ipblocklist.csv
 
 url=https://feodotracker.abuse.ch/downloads/ipblocklist.csv
 
+echo "Downloading file..."
+
 wget -q $url -O $file
 
-echo "Downloading file..."
+
 
 wgetval=$?
 
@@ -22,4 +24,4 @@ else
     exit 1
 fi
 
-./menu.sh
+#./menu.sh

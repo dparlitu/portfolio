@@ -23,7 +23,7 @@ if [ $? = 0 ]; then
                 ./downloadMalURL.sh
                 ;;
             "View Malware URL List")
-                ./downloadMalURL.sh
+                ./viewMalUrl.py
                 ;;
             "Quit")
                 echo

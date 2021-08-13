@@ -20,9 +20,16 @@ match_results = re.search(pattern, html, re.IGNORECASE)
 h2 = match_results.group()
 h2 = re.sub("<.*?>", "", h2) # Remove HTML tags
 
+# scrape Header2 subtitle
+pattern = "<p.*?>.*?</p.*?>"
+match_results = re.search(pattern, html, re.IGNORECASE)
+p = match_results.group()
+p = re.sub("<.*?>", "", p) # Remove HTML tags
+
 print()
 print(title)
 print(h2)
+print(p)
 print()
 
 subprocess.call(['sh', './viewIPblock.sh'])
