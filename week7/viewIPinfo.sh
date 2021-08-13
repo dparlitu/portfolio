@@ -1,4 +1,6 @@
 #!/bin/bash
 
-ipinfo=$(wget -qO- https://ipinfo.io/162.144.127.197)
+read -p "Enter the IP Address: " ip
+
+ipinfo=$(wget -qO- "https://ipinfo.io/"$ip)
 echo $ipinfo
