@@ -7,7 +7,7 @@ if [ $? = 0 ]; then
     echo
     echo -e "\033[1m \033[34m  === Main Menu ===\e[0m"
     
-    export PS3=$'\033[33mMenu - Please enter your choice:\e[0m '
+    export PS3=$'\033[33mPlease choose an option or press Enter to see the Menu:\e[0m '
 
     options=("Download Botnet C2 IP Blocklist" "View Botnet C2 IP Blocklist" "Download Malware URL List" "View Malware URL List" "View Graph" "View IP Info" "Quit")
     select opt in "${options[@]}"

@@ -26,7 +26,7 @@ echo "|====================================================================|"
 echo
 
 # call the main menu as the user won't see the options due to the lenght of the report
-./menu.sh
+#./menu.sh
 
 
 # https://unix.stackexchange.com/questions/283407/can-sed-save-its-output-to-a-file
