@@ -7,12 +7,12 @@ import csv
 with open("./downloads/graphdata.csv", "r") as f:
     data = [row for row in csv.reader(f)]
     xd = [float(row[0]) for row in data]
-    yd = [float(row[1]) for row in data]
+    yd = [float(row[2]) for row in data]
 
 # sort the data
-reorder = sorted(range(len(xd)), key = lambda ii: xd[ii])
-xd = [xd[ii] for ii in reorder]
-yd = [yd[ii] for ii in reorder]
+#reorder = sorted(range(len(xd)), key = lambda ii: xd[ii])
+#xd = [xd[ii] for ii in reorder]
+#yd = [yd[ii] for ii in reorder]
 
 # make the scatter plot
 plt.scatter(xd, yd, s=30, alpha=0.15, marker='o')
@@ -31,8 +31,8 @@ residuals = np.var([(slope*xx + intercept - yy)  for xx,yy in zip(xd,yd)])
 Rsqr = np.round(1-residuals/variance, decimals=2)
 plt.text(.9*max(xd)+.1*min(xd),.9*max(yd)+.1*min(yd),'$R^2 = %0.2f$'% Rsqr, fontsize=30)
 
-plt.xlabel("X Description")
-plt.ylabel("Y Description")
+plt.xlabel("DAYS OF PAST MONTH")
+plt.ylabel("NEW DISCOVERED MALWARE WEBSITES")
 
 # error bounds
 yerr = [abs(slope*xx + intercept - yy)  for xx,yy in zip(xd,yd)]
@@ -45,3 +45,5 @@ plt.plot(xl, yl, '-r')
 plt.plot(xd, yerrLower, '--r')
 plt.plot(xd, yerrUpper, '--r')
 plt.show()
+
+# https://stackoverflow.com/questions/22239691/code-for-best-fit-straight-line-of-a-scatter-plot-in-python

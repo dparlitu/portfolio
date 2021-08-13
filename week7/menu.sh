@@ -9,7 +9,7 @@ if [ $? = 0 ]; then
     
     export PS3=$'\033[33mMenu - Please enter your choice:\e[0m '
 
-    options=("Download Botnet C2 IP Blocklist" "View Botnet C2 IP Blocklist" "Download Malware URL List" "View Malware URL List" "View Graph" "Quit")
+    options=("Download Botnet C2 IP Blocklist" "View Botnet C2 IP Blocklist" "Download Malware URL List" "View Malware URL List" "View Graph" "View IP Info" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -26,7 +26,10 @@ if [ $? = 0 ]; then
                 ./viewMalUrl.py
                 ;;
             "View Graph")
-                ./viewgraph.py
+                ./viewgraph.sh
+                ;;
+            "View IP Info")
+                ./viewIPinfo.sh
                 ;;
             "Quit")
                 echo
