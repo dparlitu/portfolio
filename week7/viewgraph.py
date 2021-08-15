@@ -4,15 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
+# open csv file and use row0 and row2 to convert numbers to float
 with open("./downloads/graphdata.csv", "r") as f:
     data = [row for row in csv.reader(f)]
     xd = [float(row[0]) for row in data]
     yd = [float(row[2]) for row in data]
-
-# sort the data
-#reorder = sorted(range(len(xd)), key = lambda ii: xd[ii])
-#xd = [xd[ii] for ii in reorder]
-#yd = [yd[ii] for ii in reorder]
 
 # make the scatter plot
 plt.scatter(xd, yd, s=30, alpha=0.15, marker='o')
@@ -23,7 +19,7 @@ par = np.polyfit(xd, yd, 1, full=True)
 slope=par[0][0]
 intercept=par[0][1]
 xl = [min(xd), max(xd)]
-yl = [slope*xx + intercept  for xx in xl]
+yl = [slope*xx + intercept for xx in xl]
 
 # coefficient of determination, plot text
 variance = np.var(yd)

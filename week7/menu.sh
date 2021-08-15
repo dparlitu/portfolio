@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this is the menu for the script that will...
+# this is the menu for the script that will... 
 
 # if exit status from the password check script returns 0 then display a menu with four options
 if [ $? = 0 ]; then

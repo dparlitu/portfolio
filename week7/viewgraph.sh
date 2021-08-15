@@ -6,8 +6,6 @@ if [ ! -f "./downloads/malwareurl.txt" ]; then
     exit 1
 fi
 
-
-
 # prepare data for graph by keeping the Date column only
 # only interested in the number of occurances for every Date
 awk '{ print $1 }' ./downloads/malwareurl.txt | awk -F',' '{ print $2 }' > ./downloads/graphtemp.txt
@@ -22,4 +20,5 @@ awk '{print NR  "," $s}' ./downloads/graphtemp.csv > ./downloads/graphdata.csv
 rm ./downloads/graphtemp.txt
 rm ./downloads/graphtemp.csv
 
+# open graph
 ./viewgraph.py
