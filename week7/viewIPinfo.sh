@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script will check details of an IP
+# this script will check details of an IP address using ipinfo.io api
 
 # capture IP address
 read -p "Enter IP Address to check: " ip
@@ -29,6 +29,4 @@ END {
 }' ./downloads/ipinfo.txt
 echo
 
-#echo $(cat ./downloads/ipinfo.txt)
-
-
+exit 0

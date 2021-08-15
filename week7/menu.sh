@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this is the menu for the script that will... 
+# this is the main menu for running all the scripts
 
 # if exit status from the password check script returns 0 then display a menu with four options
 if [ $? = 0 ]; then
@@ -9,7 +9,7 @@ if [ $? = 0 ]; then
     
     export PS3=$'\033[33mPlease choose an option or press Enter to see the Menu:\e[0m '
 
-    options=("Download Botnet C2 IP Blocklist" "View Botnet C2 IP Blocklist" "Download Malware URL List" "View Malware URL List" "View Graph" "View IP Info" "Quit")
+    options=("Download Botnet C2 IP Blocklist" "View Botnet C2 IP Blocklist" "Download Malware URL List" "View Malware URL List" "View Linear Regression Graph" "View IP Info" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -25,7 +25,7 @@ if [ $? = 0 ]; then
             "View Malware URL List")
                 ./viewMalUrl.py
                 ;;
-            "View Graph")
+            "View Linear Regression Graph")
                 ./viewgraph.sh
                 ;;
             "View IP Info")
